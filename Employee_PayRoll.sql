@@ -15,3 +15,8 @@ SHOW table status;
 SELECT * FROM employee_payroll;
 
 SELECT * FROM employee_payroll WHERE start BETWEEN CAST('2020-01-02' AS DATE) AND DATE(NOW());
+
+ALTER TABLE employee_payroll ADD GENDER char(1) after NAME;
+UPDATE EMPLOYEE_PAYROLL SET GENDER = 'M';
+SHOW table status;
+DESCRIBE employee_payroll;
