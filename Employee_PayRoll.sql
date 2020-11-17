@@ -20,3 +20,15 @@ ALTER TABLE employee_payroll ADD GENDER char(1) after NAME;
 UPDATE EMPLOYEE_PAYROLL SET GENDER = 'M';
 SHOW table status;
 DESCRIBE employee_payroll;
+
+SELECT sum(SALARY) FROM employee_payroll WHERE GENDER = 'M' GROUP BY GENDER;
+SELECT min(SALARY) FROM employee_payroll WHERE GENDER = 'M' GROUP BY GENDER;
+SELECT max(SALARY) FROM employee_payroll WHERE GENDER = 'M' GROUP BY GENDER;
+SELECT avg(SALARY) FROM employee_payroll WHERE GENDER = 'M' GROUP BY GENDER;
+
+INSERT INTO employee_payroll(NAME,SALARY,START) VALUES ('SWEETY',80000,'2020-01-09');
+INSERT INTO employee_payroll(name,salary,start) VALUES ('SRIDHAR',520000,'2020-02-07');
+UPDATE employee_payroll SET gender = 'F' WHERE name = 'SRIDHAR';
+
+SELECT gender,count(NAME) FROM employee_payroll GROUP BY GENDER;
+SELECT avg(SALARY) FROM employee_payroll WHERE GENDER = 'F' GROUP BY GENDER;
