@@ -32,3 +32,8 @@ UPDATE employee_payroll SET gender = 'F' WHERE name = 'SRIDHAR';
 
 SELECT gender,count(NAME) FROM employee_payroll GROUP BY GENDER;
 SELECT avg(SALARY) FROM employee_payroll WHERE GENDER = 'F' GROUP BY GENDER;
+
+
+ALTER TABLE employee_payroll ADD PHONENUMBER BIGINT AFTER START;
+ALTER TABLE employee_payroll ADD ADDRESS varchar(100) AFTER PHONENUMBER;
+ALTER TABLE employee_payroll ADD DEPEARTMENT varchar(50) NOT NULL AFTER ADDRESS;
